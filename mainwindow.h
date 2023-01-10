@@ -24,12 +24,22 @@ private:
     QSystemTrayIcon *trayIcon;
 
     QMenu *trayIconMenu;
+    QMenu *subMenu_Speaker;
+    QMenu *subMenu_Microphone;
+    QMenu *subMenu_Cam;
     QAction *hideAction;
     QAction *showAction;
     QAction *exitAction;
-    QAction *speakerAction;
-    QAction *microphoneAction;
-    QAction *camAction;
+
+    QAction *speakerAction_on;
+    QAction *speakerAction_off;
+
+    QAction *microphoneAction_on;
+    QAction *microphoneAction_off;
+
+    QAction *camAction_on;
+    QAction *camAction_off;
+
 
 };
 #endif // MAINWINDOW_H

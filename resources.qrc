@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>img/endless.gif</file>
+        <file>img/tray_icon.png</file>
     </qresource>
 </RCC>

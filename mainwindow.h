@@ -5,6 +5,7 @@
 #include <QMovie>
 #include <QSystemTrayIcon>
 #include <QCloseEvent>
+#include <QProcess>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }

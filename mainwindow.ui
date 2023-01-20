@@ -39,7 +39,7 @@ font: 700 italic 14pt &quot;TeXGyreCursor&quot;;</string>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton">
+          <widget class="QRadioButton" name="rb_speaker_on">
            <property name="styleSheet">
             <string notr="true">color: rgb(57, 255, 64);
 </string>
@@ -50,7 +50,7 @@ font: 700 italic 14pt &quot;TeXGyreCursor&quot;;</string>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton_2">
+          <widget class="QRadioButton" name="rb_speaker_off">
            <property name="styleSheet">
             <string notr="true">color: rgb(255, 0, 0);</string>
            </property>
@@ -75,7 +75,7 @@ font: 700 italic 14pt &quot;TeXGyreCursor&quot;;</string>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton_3">
+          <widget class="QRadioButton" name="rb_microphone_on">
            <property name="styleSheet">
             <string notr="true">color: rgb(57, 255, 64);</string>
            </property>
@@ -85,7 +85,7 @@ font: 700 italic 14pt &quot;TeXGyreCursor&quot;;</string>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton_4">
+          <widget class="QRadioButton" name="rb_microphone_off">
            <property name="styleSheet">
             <string notr="true">color: rgb(255, 0, 0);</string>
            </property>
@@ -110,7 +110,7 @@ font: 700 italic 14pt &quot;TeXGyreCursor&quot;;</string>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton_5">
+          <widget class="QRadioButton" name="rb_cam_on">
            <property name="styleSheet">
             <string notr="true">color: rgb(57, 255, 64);</string>
            </property>
@@ -120,7 +120,7 @@ font: 700 italic 14pt &quot;TeXGyreCursor&quot;;</string>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton_6">
+          <widget class="QRadioButton" name="rb_cam_off">
            <property name="styleSheet">
             <string notr="true">color: rgb(255, 0, 0);</string>
            </property>

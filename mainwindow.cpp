@@ -31,6 +31,13 @@ MainWindow::MainWindow(QWidget *parent)
     connect(camAction_on, SIGNAL(triggered()), this, SLOT(onCamActionOn()));
     connect(camAction_off, SIGNAL(triggered()), this, SLOT(onCamActionOff()));
 
+    connect(ui->rb_speaker_on, SIGNAL(clicked(bool)), this, SLOT(onSpeakerActionOn()));
+    connect(ui->rb_speaker_off, SIGNAL(clicked(bool)), this, SLOT(onSpeakerActionOff()));
+    connect(ui->rb_microphone_on, SIGNAL(clicked(bool)), this, SLOT(onMicrophoneActionOn()));
+    connect(ui->rb_microphone_off, SIGNAL(clicked(bool)), this, SLOT(onMicrophoneActionOff()));
+    connect(ui->rb_cam_on, SIGNAL(clicked(bool)), this, SLOT(onCamActionOn()));
+    connect(ui->rb_cam_off, SIGNAL(clicked(bool)), this, SLOT(onCamActionOff()));
+
 }
 
 MainWindow::~MainWindow()
@@ -100,30 +107,61 @@ void MainWindow::onExitAction()
 
 void MainWindow::onSpeakerActionOn()
 {
-
+    QStringList command = QStringList() << "-c" << "pactl set-sink-volume 0 30%";
+    QProcess process;
+    process.start("/bin/bash", command);
+    if (!process.waitForFinished()) {
+        qDebug() << "fail on Speaker Action On";
+        return;
+    }
 }
 
 void MainWindow::onSpeakerActionOff()
 {
-
+    QStringList command = QStringList() << "-c" << "pactl set-sink-volume 0 0%";
+    QProcess process;
+    process.start("/bin/bash", command);
+    if (!process.waitForFinished()) {
+        qDebug() << "fail on Speaker Action Off";
+    }
 }
 
 void MainWindow::onMicrophoneActionOn()
 {
-
+    QStringList command = QStringList() << "-c" << "amixer set Capture cap";
+    QProcess process;
+    process.start("/bin/bash", command);
+    if (!process.waitForFinished()) {
+        qDebug() << "fail on Microphone Action On";
+    }
 }
 
 void MainWindow::onMicrophoneActionOff()
 {
-
+    QStringList command = QStringList() << "-c" << "amixer set Capture nocap";
+    QProcess process;
+    process.start("/bin/bash", command);
+    if (!process.waitForFinished()) {
+        qDebug() << "fail on Microphone Action Off";
+    }
 }
 
 void MainWindow::onCamActionOn()
 {
-
+    QStringList command = QStringList() << "-c" << "modprobe uvcvideo";
+    QProcess process;
+    process.start("/bin/bash", command);
+    if (!process.waitForFinished()) {
+        qDebug() << "fail on Cam Action On";
+    }
 }
 
 void MainWindow::onCamActionOff()
 {
-
+    QStringList command = QStringList() << "-c" << "modprobe -r uvcvideo";
+    QProcess process;
+    process.start("/bin/bash", command);
+    if (!process.waitForFinished()) {
+        qDebug() << "fail on Cam Action Off";
+    }
 }

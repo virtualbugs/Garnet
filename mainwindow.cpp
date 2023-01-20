@@ -20,6 +20,17 @@ MainWindow::MainWindow(QWidget *parent)
 
     QIcon *icon = new QIcon("://img/tray_icon.png");
     trayIcon->setIcon(*icon);
+
+    connect(hideAction, SIGNAL(triggered()), this, SLOT(onHideAction()));
+    connect(showAction, SIGNAL(triggered()), this, SLOT(onShowAction()));
+    connect(exitAction, SIGNAL(triggered()), this, SLOT(onExitAction()));
+    connect(speakerAction_on, SIGNAL(triggered()), this, SLOT(onSpeakerActionOn()));
+    connect(speakerAction_off, SIGNAL(triggered()), this, SLOT(onSpeakerActionOff()));
+    connect(microphoneAction_on, SIGNAL(triggered()), this, SLOT(onMicrophoneActionOn()));
+    connect(microphoneAction_off, SIGNAL(triggered()), this, SLOT(onMicrophoneActionOff()));
+    connect(camAction_on, SIGNAL(triggered()), this, SLOT(onCamActionOn()));
+    connect(camAction_off, SIGNAL(triggered()), this, SLOT(onCamActionOff()));
+
 }
 
 MainWindow::~MainWindow()
@@ -65,3 +76,54 @@ void MainWindow::setMenuAndActions()
     trayIcon->setContextMenu(trayIconMenu);
 }
 
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    event->ignore();
+    hide();
+}
+
+void MainWindow::onHideAction()
+{
+    hide();
+}
+
+void MainWindow::onShowAction()
+{
+    show();
+}
+
+void MainWindow::onExitAction()
+{
+    QApplication::quit();
+}
+
+void MainWindow::onSpeakerActionOn()
+{
+
+}
+
+void MainWindow::onSpeakerActionOff()
+{
+
+}
+
+void MainWindow::onMicrophoneActionOn()
+{
+
+}
+
+void MainWindow::onMicrophoneActionOff()
+{
+
+}
+
+void MainWindow::onCamActionOn()
+{
+
+}
+
+void MainWindow::onCamActionOff()
+{
+
+}

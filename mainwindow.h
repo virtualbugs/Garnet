@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QMovie>
 #include <QSystemTrayIcon>
+#include <QCloseEvent>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -40,6 +41,20 @@ private:
     QAction *camAction_on;
     QAction *camAction_off;
 
+
+protected:
+    virtual void closeEvent(QCloseEvent *event) override;
+
+public slots:
+    void onHideAction();
+    void onShowAction();
+    void onExitAction();
+    void onSpeakerActionOn();
+    void onSpeakerActionOff();
+    void onMicrophoneActionOn();
+    void onMicrophoneActionOff();
+    void onCamActionOn();
+    void onCamActionOff();
 
 };
 #endif // MAINWINDOW_H
